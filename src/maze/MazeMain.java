@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
+public class MazeMain {
     public static void main(String[] args) {
 
 
@@ -122,8 +122,8 @@ public class Main {
             // 스택에 경로 저장
             if (!stack.isEmpty()) {
                 List<Integer> popList = stack.pop();
-                startX = popList.get(0).intValue(); // 현재 위치 재설정  row
-                startY = popList.get(1).intValue(); // 현재 위치 재설정  col
+                startX = popList.get(0); // 현재 위치 재설정  row
+                startY = popList.get(1); // 현재 위치 재설정  col
                 pathList.add(popList);              // 총 경로 저장
 
                 // 현위치
@@ -264,7 +264,7 @@ public class Main {
             // row별 좌표리스트를 저장하기 위한 작업
             for (int j = sizeCount; j < list2.size(); j++) {
                 List<Integer> l2 = list2.get(j);
-                if(l1.get(0) == l2.get(0)){
+                if(l1.get(0).compareTo(l2.get(0)) == 0){
                     sizeCount++;    // 같은 row의 갯수만큼 증가
                     save.add(l2);   // 같은 row 저장
                 }
@@ -328,10 +328,7 @@ public class Main {
         최단경로에서 중복된 row의 이동을 위해 저장작업을 하여 최종 경로를 완성한다.
      */
     private static List<String> copyPath(List<String> path){
-        List<String> copyPath = new ArrayList<>();
-        for (String str : path) {
-            copyPath.add(str);
-        }
+        List<String> copyPath = new ArrayList<>(path);
 
         // 길 중복 row 저장
         for (int i = 0; i < path.size() - 1; i++) {
