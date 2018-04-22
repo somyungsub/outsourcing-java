@@ -12,6 +12,7 @@ public class HistogramMain {
 
         System.out.println("히스토그램을 그립니다.");
         showHistogram(line);        // 히스토그램 처리 (알파벳이 아닌 문자는 제외)
+        System.out.println("Test!!");
 
     }
 
