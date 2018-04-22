@@ -2,9 +2,8 @@ package fishgame;
 
 import java.util.Scanner;
 
-public class GameMain {
+public class FishGameMain {
     public static void main(String[] args) {
-
         // 키 표준입력
         Scanner sc = new Scanner(System.in);
 
