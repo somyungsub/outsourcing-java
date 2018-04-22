@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Main {
+public class HistogramMain {
     public static void main(String[] args) {
 
         System.out.println("영문 텍스트를 입력하고 세미콜론을 입력하세요.");

@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Main {
+public class SortedTestMain {
     public static void main(String[] args) {
         Scanner inFile = null;
         try {

@@ -6,8 +6,8 @@ import java.io.*;
 import java.util.*;
 import java.util.regex.Pattern;
 
-public class Main {
-    static Logger logger = Logger.getLogger(Main.class);
+public class DigitMain {
+    static Logger logger = Logger.getLogger(DigitMain.class);
 
 
     public static void main(String[] args) throws Exception {
