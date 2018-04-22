@@ -14,6 +14,8 @@ public class HistogramMain {
         showHistogram(line);        // 히스토그램 처리 (알파벳이 아닌 문자는 제외)
         System.out.println("Test!!");
 
+        System.out.println("Test2!!!");
+
     }
 
     /*
