@@ -1,0 +1,16 @@
+20050068 KimGangSoo
+English 3 A
+Biology 4 B
+
+20061029 LeeJungHo
+Philosophy 3 A
+Chemistry 4 B
+Biology 4 A
+Mathematics 3 C
+English 3 B
+
+20020017 KimYoungGoo
+Mathematics 4 A
+Physics 3 B
+ComputerScience 3 B
+History 3 A
