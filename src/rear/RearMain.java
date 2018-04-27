@@ -59,7 +59,6 @@ public class RearMain {
     private static String getString(){
         Scanner sc = new Scanner(System.in);    // 입력을 위한 스캐너 객체 생성 및 인풋스트림형성
         String s = sc.nextLine();               // 입력받기
-        sc.close();                             // 입력 받은 후 스트림 닫기
         return s.replace("$","");   // 입력 값 반환 및 $는 empty(비어있는) 값으로 변환 시킨 후 반환
     }
 
