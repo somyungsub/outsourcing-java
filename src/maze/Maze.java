@@ -21,8 +21,8 @@ public class Maze {
         startY = scan.nextInt();    // 1 (행)
         startX = scan.nextInt();    // 1 (열)
 
-        endY = scan.nextInt();      // 6 (행)
-        endX = scan.nextInt();      // 6 (열)
+        endY = scan.nextInt();      // 6 (열)
+        endX = scan.nextInt();      // 7 (행)
 
         maze = new int[sizeY][sizeX];   // 9행 8열
 
@@ -52,7 +52,7 @@ public class Maze {
         int startX = this.startX;   // 열
 
         gameRound[startY][startX] = 'S'; // 시작점 표시
-        gameRound[endY][endX] = 'F';     // 도착점 표시
+        gameRound[endX][endY] = 'F';     // 도착점 표시
 
         // 시작
         Stack<List<Integer>> stack = new Stack<>();
