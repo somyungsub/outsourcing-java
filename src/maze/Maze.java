@@ -24,7 +24,7 @@ public class Maze {
         endY = scan.nextInt();      // 6 (행)
         endX = scan.nextInt();      // 6 (열)
 
-        maze = new int[sizeY][sizeX];   // 8행 9열
+        maze = new int[sizeY][sizeX];   // 9행 8열
 
         // 게임판 초기화
         for (int y = 0; y < sizeY; y++) {
@@ -35,7 +35,11 @@ public class Maze {
         scan.close();
     }
 
-    // 작성할것
+    /*
+        미로찾기 실행
+            1. stack (백트랙킹)을 활용하여 미로탈출 여부 판단 -> 출력
+            2. 미로탈출 경로 0 -> *로 변환
+     */
     public void findExit() {
         char[][] gameRound = new char[sizeY][sizeX];
         for (int y = 0; y < sizeY; y++) {
@@ -62,7 +66,6 @@ public class Maze {
                 List<Integer> popList = stack.pop();
                 startY = popList.get(0); // 현재 위치 재설정  row
                 startX = popList.get(1); // 현재 위치 재설정  col
-//                pathList.add(popList);              // 총 경로 저장
 
                 // 현위치
                 if (gameRound[startY][startX] == '0') {
@@ -71,7 +74,7 @@ public class Maze {
 
                 // 탈출위치
                 if (gameRound[startY][startX] == 'F') {
-                    success = true;
+                    success = true; // while문 탈출 플래그
                 }
 
             }
@@ -118,15 +121,7 @@ public class Maze {
                     return;
                 }
 
-                /*
-                    미로 탈출한 경우
-                        1. 길경로 확인
-                        2. 최단경로 찾기
-                        3. 최단경로에서 같은 row열의 이동 찾기
-                        4. 길 최종확인 후 문자출력
-                 */
-
-                // 화면보기
+                // 경로 출력
                 for (int y = 0; y < this.sizeY; y++) {
                     StringBuilder sb = new StringBuilder();
                     for (int x = 0; x < this.sizeX; x++) {
