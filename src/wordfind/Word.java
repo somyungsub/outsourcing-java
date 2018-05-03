@@ -4,11 +4,11 @@ package wordfind;
     단어를 담는 객체
  */
 public class Word {
-    private String engName;
-    private String korName;
+    private String engName; // 영어단어
+    private String korName; // 영단어 뜻
 
     /*
-        영어단어, 한국뜻 초기화
+        영어단어, 영단어 뜻 초기화
      */
     public Word(String engName, String korName) {
         this.engName = engName;
@@ -23,7 +23,7 @@ public class Word {
     }
 
     /*
-        한국뜻 얻기
+        영단어 뜻 얻기
      */
     public String getKorName() {
         return korName;
