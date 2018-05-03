@@ -5,5 +5,6 @@ public class TestMain {
         // 생성 테스트
 //        TestClass testClass = ObjectUtils.convertToObject(null, TestClass.class);
 //        TestClass testClass2 = ObjectUtils.convertToObject(null, TestClass.class);
+        System.out.println(CommonUtils.getIpAddress());
     }
 }
