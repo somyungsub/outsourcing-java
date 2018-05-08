@@ -75,7 +75,6 @@ public class WordQuiz {
             }
 
             // 문제 실행
-            System.out.println(map.get(rightIdx).getEngName() + "?");   // 영어단어
             StringBuilder sb = new StringBuilder();
             List<Word> saveList = new ArrayList<>();                    // list가 삭제 되면서 4개의 영단어를 재 저장하기 위한 리스트
             int count = 1;
@@ -92,24 +91,38 @@ public class WordQuiz {
             sb.append(" :>");
 
             // 문제 출력
-            System.out.print(sb.toString());
-            int answer = sc.nextInt();
+            while (true) {
+                System.out.println(map.get(rightIdx).getEngName() + "?");   // 영어단어
+                System.out.print(sb.toString());
+                int answer = sc.nextInt();
 
-            // "-1" : 실행종료
-            if (answer == -1) {
-                System.out.println("\"명품영어\"를 종료합니다...");
-                return;
-            }
+                // "-1" : 실행종료
+                if (answer == -1) {
+                    System.out.println("\"명품영어\"를 종료합니다...");
+                    return;
+                }
 
-            // 정답
-            if (saveList.get(answer - 1).getKorName().equals(map.get(rightIdx).getKorName())) {
-                System.out.println("Excellent !!");
-            }
-            // 오답
-            else {
-                System.out.println("No. !!");
-            }
+                // 5 이상의 0이하의 숫자를 입력 할 경우 (오입력 경우)
+                if (answer >= 5 || answer <= 0) {
+                    System.out.println("잘못 입력 하였습니다. 다시 입력 해주세요..");
+                    continue;
+                }
 
+                // 정답
+                if (saveList.get(answer - 1).getKorName().equals(map.get(rightIdx).getKorName())) {
+                    System.out.println("Excellent !!");
+                }
+                // 오답
+                else {
+                    System.out.println("No. !!");
+                }
+
+                // 1~4입력 된 경우 (정상 입력 경우) 다음문제 실행
+                if (0 < answer && answer < 5) {
+                    break;
+                }
+
+            }
         }
     }
 }
