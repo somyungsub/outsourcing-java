@@ -21,7 +21,7 @@ public class DigitMain {
 
         // 아래부터 프로세스
         Properties props = new Properties();
-        String path = "src\\convertDigit\\checkword.properties";
+        String path = "src\\convertDigit\\checkword5.properties";
         FileInputStream fis = new FileInputStream(new File(path));
         InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
         props.load(isr);
