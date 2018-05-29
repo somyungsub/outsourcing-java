@@ -75,6 +75,7 @@ public class Main {
                 // 마지막까지 틀린 경우 (5번 실패)
                 if (i == 1 ) {
                     System.out.println("5번 실패 하였습니다.");
+                    System.out.println(word);
                     break;
                 }
             }
