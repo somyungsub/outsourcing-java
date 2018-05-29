@@ -97,7 +97,7 @@ public class Main {
         StringBuilder sb = new StringBuilder(word);
         while (count < 2) {
             int idx = rand.nextInt(word.length());   // "-"로 변경할 랜덤위치의 인덱스 값
-            char ch = word.charAt(idx);
+            char ch = sb.toString().charAt(idx);
             if (ch != '-') {
                 sb.setCharAt(idx, '-');         // "-"로 변경하기
                 count++;
