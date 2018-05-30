@@ -14,11 +14,11 @@ public class GamePanel extends JPanel {
         JFrame container = new JFrame();
         container.setSize(600, 300);
         container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        container.setLayout(new FlowLayout());
+        container.setLayout(null);
         container.setTitle("숫자맞추기");
 
         JPanel panel = new JPanel();
-
+        panel.setBounds(300, 150, 150, 150);
         jLabel = new JLabel[3];
         for (int i = 0; i < jLabel.length; i++) {
             jLabel[i] = new JLabel("0", JLabel.CENTER);
