@@ -1,4 +1,4 @@
-package swinggame;
+package swingthreenum;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,8 +18,6 @@ public class GamePanel extends JPanel {
         container.setTitle("숫자맞추기");
 
         JPanel panel = new JPanel();
-//        panel.setFocusable(true);
-//        panel.requestFocus();
 
         jLabel = new JLabel[3];
         for (int i = 0; i < jLabel.length; i++) {
@@ -58,5 +56,8 @@ public class GamePanel extends JPanel {
             public void keyReleased(KeyEvent e) {
             }
         });
+    }
+    public static void main(String[] args) {
+        GamePanel panel = new GamePanel();
     }
 }
