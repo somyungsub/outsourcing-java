@@ -81,8 +81,12 @@ public class Main {
             }
 
             // 다음 단어를 진행할건지 판단
+            String answer;
             System.out.print("Next(y/n)?");
-            if ("n".equals(sc.nextLine().toLowerCase())) {
+            while (!"y,n".contains((answer = sc.nextLine().toLowerCase()))) {
+                System.out.println("다시 입력해주세요 잘못 입력하셨습니다. Next(y/n)");
+            }
+            if ("n".equals(answer)) {
                 break;
             }
         }
