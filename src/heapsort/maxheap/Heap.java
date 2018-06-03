@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Heap {
-//    private int heapSize;
     private List<Integer> itemHeap;
 
     public Heap() {
         itemHeap = new ArrayList<>();
-//        heapSize = 0;
     }
 
     public void reheapUp(Heap self, int idx){
@@ -85,6 +83,5 @@ public class Heap {
 
     public int getHeapSize() {
         return this.itemHeap.size();
-//        return heapSize;
     }
 }
