@@ -13,7 +13,7 @@ public class Heap {
     }
 
     public void reheapUp(Heap self, int idx){
-        if (idx > -1) {
+        if (idx > 0) {
             int parent = (idx - 1) / 2;
             if (self.getItemHeap().get(idx) > self.getItemHeap().get(parent)) {
                 int temp = self.getItemHeap().get(idx);
@@ -47,18 +47,24 @@ public class Heap {
     }
 
     public void insert(int num) {
+        int size = getHeapSize();
         getItemHeap().add(num);
-        reheapUp(this, getHeapSize());
+        reheapUp(this, size);
     }
 
     public int delete(){
         if (getItemHeap().size() == 0) {
-            return -1;
+            return 0;
         }
         int del = getItemHeap().get(0);
-        int lastNum = getItemHeap().remove(getHeapSize());
-//        heapSize--;
-        getItemHeap().set(0, lastNum);
+        int lastNum = getItemHeap().remove(getHeapSize()-1);
+        if (getHeapSize() == 0) {
+            getItemHeap().add(lastNum);
+        } else {
+            getItemHeap().set(0, lastNum);
+        }
+
+
         reheapDown(this, 0);
         return del;
     }
@@ -67,7 +73,8 @@ public class Heap {
         List<Integer> sort = new ArrayList<>();
         int size = getHeapSize();
         for (int i = 0; i < size; i++) {
-            sort().add(delete());
+            int num = delete();
+            sort.add(num);
         }
         return sort;
     }
