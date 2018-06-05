@@ -42,7 +42,7 @@ public class BankApplication {
         String owner = scanner.next();
         System.out.print("초기입금액 : ");
         int balance = scanner.nextInt();
-        System.out.println("결과 : 계좌가 생성 되었씁니다.");
+        System.out.println("결과 : 계좌가 생성 되었습니다.");
         accountList.add(new Account(ano, owner, balance));
     }
 
