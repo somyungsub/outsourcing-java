@@ -95,18 +95,38 @@ public class Main {
     /*
        저장된 word 중 랜덤으로 선정하여 문제만들기
     */
+//    private static String makeWordQuiz(String word) {
+//        // 문제 생성 : "-" 2개 만들기
+//        int count = 0;  // 2개확인을 위한 flag
+//        StringBuilder sb = new StringBuilder(word);
+//        while (count < 2) {
+//            int idx = rand.nextInt(word.length());   // "-"로 변경할 랜덤위치의 인덱스 값
+//            char ch = sb.toString().charAt(idx);
+//            if (ch != '-') {
+//                sb.setCharAt(idx, '-');         // "-"로 변경하기
+//                count++;
+//            }
+//        }
+//        return sb.toString();
+//    }
     private static String makeWordQuiz(String word) {
-        // 문제 생성 : "-" 2개 만들기
-        int count = 0;  // 2개확인을 위한 flag
-        StringBuilder sb = new StringBuilder(word);
-        while (count < 2) {
+        // 문제 생성 : "-" 2개이상, 동일한 경우 3개이상
+        String changeWord = word;
+        while (true) {
             int idx = rand.nextInt(word.length());   // "-"로 변경할 랜덤위치의 인덱스 값
-            char ch = sb.toString().charAt(idx);
-            if (ch != '-') {
-                sb.setCharAt(idx, '-');         // "-"로 변경하기
-                count++;
+            char ch = word.charAt(idx);
+            changeWord = changeWord.replace(ch, '-');
+
+            int count = 0;  // 2개확인을 위한 flag
+            for (int i = 0; i < changeWord.length(); i++) {
+                if (changeWord.charAt(i) == '-') {
+                    count++;
+                }
+            }
+            if (count >= 2) {
+                break;
             }
         }
-        return sb.toString();
+        return changeWord;
     }
 }
