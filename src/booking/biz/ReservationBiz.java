@@ -41,10 +41,14 @@ public class ReservationBiz implements IReservationBiz {
 
         // 현재금액과 예매수 * 각가격을 비교
         if (money >= art.getPrice() * art.getReservationNum()) {    // 현재금액이 > 예매수*가격 (현재예매가 가능한경우 판단)
+            // 현재금액 - 예매수 * 가격
             money -= art.getPrice() * art.getReservationNum();
+
+            // 예매수량 만큼 Art 객체 저장
             for (int i = 0; i < art.getReservationNum(); i++) {
                 artList.add(art);
             }
+
         }else { // 예매 불가한 경우
             System.out.println("잔액이 부족하여 영화예매 불가능합니다.");
         }
