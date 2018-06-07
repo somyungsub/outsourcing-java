@@ -38,7 +38,7 @@ public class ClickLabel extends JFrame {
                         && cLabel.getY() + 28 < e.getY() && cLabel.getY() + 45 > e.getY()){
 //                    cLabel.setLocation((int)(Math.random() * 450),(int)(Math.random() * 450));
                     int x = (int) (Math.random() * (getSize().width - 25));
-                    int y = (int)(Math.random() * (getSize().height - 40)) ;
+                    int y = (int)(Math.random() * (getSize().height - 50));
                     cLabel.setLocation(x, y);
                 }
             }
