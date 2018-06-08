@@ -2,9 +2,7 @@ package hangman;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Vector;
+import java.util.*;
 
 public class Main {
     private static Random rand = new Random();
@@ -113,6 +111,7 @@ public class Main {
         // 문제 생성 : "-" 2개이상, 동일한 경우 3개이상
         String changeWord = word;
         while (true) {
+            Set<String> set = new HashSet<>();
             int idx = rand.nextInt(word.length());   // "-"로 변경할 랜덤위치의 인덱스 값
             char ch = word.charAt(idx);
             changeWord = changeWord.replace(ch, '-');
@@ -120,10 +119,11 @@ public class Main {
             int count = 0;  // 2개확인을 위한 flag
             for (int i = 0; i < changeWord.length(); i++) {
                 if (changeWord.charAt(i) == '-') {
+                    set.add(String.valueOf(word.charAt(i)));
                     count++;
                 }
             }
-            if (count >= 2) {
+            if (count >= 2 && set.size() >= 2) {
                 break;
             }
         }
