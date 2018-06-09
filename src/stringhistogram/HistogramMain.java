@@ -12,10 +12,6 @@ public class HistogramMain {
 
         System.out.println("히스토그램을 그립니다.");
         showHistogram(line);        // 히스토그램 처리 (알파벳이 아닌 문자는 제외)
-        System.out.println("Test!!");
-
-        System.out.println("Test2!!!");
-
     }
 
     /*
@@ -24,18 +20,15 @@ public class HistogramMain {
      */
     private static String readString() {
         StringBuffer sb = new StringBuffer();       // 키 입력을 저장 할 스트링버퍼 생성
-
         Scanner scanner = new Scanner(System.in);   // 텍스트 입력스트림을 형성하고 키 입력을 받습니다
 
         // ';'와 엔터키를 입력할 때 까지 입력을 받습니다
         while (true) {
             String line = scanner.nextLine();   // 텍스트 한 라인을 읽는다.
-
             // ';'만 있는 라인이면 -> 종료
             if (line.length() == 1 && line.charAt(0) == ';') {
                 break; // 입력 끝 -> 종료
             }
-
             sb.append(line);    // 읽은 라인 문자열을 스트링버퍼에 추가한다.
         }
 
