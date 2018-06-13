@@ -20,7 +20,7 @@ import java.util.List;
 public class ReservationBiz implements IReservationBiz {
 
 	private int money;  // 잔액
-    List<Art> artList;  // Art를 상속하는 하위 클래스들 관리 자료구조
+    private List<Art> artList;  // Art를 상속하는 하위 클래스들 관리 자료구조
 
 	// 생성자 : 잔액을 매개변수로 받음
 	public ReservationBiz(int money) {
