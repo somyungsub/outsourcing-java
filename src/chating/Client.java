@@ -1,13 +1,13 @@
 package chating;
 
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import org.apache.log4j.net.SocketServer;
+
+import java.awt.event.*;
 import java.io.*;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Client extends Frame {
     String nickname = "";
@@ -41,40 +41,10 @@ public class Client extends Frame {
         };
         tf.addActionListener(actionListener);
         this.add(p);
-        this.addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {
-                
-            }
-
-            @Override
-            public void windowClosing(WindowEvent e) {
-
-            }
-
-            @Override
-            public void windowClosed(WindowEvent e) {
-
-            }
-
-            @Override
-            public void windowIconified(WindowEvent e) {
-
-            }
-
-            @Override
-            public void windowDeiconified(WindowEvent e) {
-
-            }
-
-            @Override
-            public void windowActivated(WindowEvent e) {
-
-            }
-
-            @Override
-            public void windowDeactivated(WindowEvent e) {
-
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent windowEvent) {
+                System.out.println("close!");
+                System.exit(0);
             }
         });
         this.setBounds(600, 200, 300, 300);
@@ -95,6 +65,7 @@ public class Client extends Frame {
 
     public void startClient() throws UnknownHostException, IOException {
         Socket socket = new Socket(serverIP, serverPort);
+
         ta.setText("서버에 연결되었습니다.");
         in = new DataInputStream(socket.getInputStream());
         out = new DataOutputStream(socket.getOutputStream());

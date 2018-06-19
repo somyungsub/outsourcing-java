@@ -31,7 +31,12 @@ public class Server extends Frame implements ActionListener {
         this.setResizable(false);
         this.setVisible(true);
         tf.requestFocus();
-//        this.addWindowListener(new MyWindowHandler());
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent windowEvent) {
+                System.out.println("close!");
+                System.exit(0);
+            }
+        });
         serverStart();
     }
 
