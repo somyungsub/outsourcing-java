@@ -1,7 +1,7 @@
-package swinggame;
+package urlcli;
 
 public class Main {
     public static void main(String[] args) {
-        GamePanel panel = new GamePanel();
+        new CliRunner();
     }
 }

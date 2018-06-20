@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="clilib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/urlcli/clilib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src/urlcli/clilib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/src/urlcli/clilib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/src/urlcli/clilib" recursive="false" type="SOURCES" />
+  </library>
+</component>
