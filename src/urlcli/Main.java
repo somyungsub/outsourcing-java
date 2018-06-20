@@ -2,6 +2,9 @@ package urlcli;
 
 public class Main {
     public static void main(String[] args) {
-        new CliRunner();
+        String[] str = {"http://www.naver.com"
+                        , "http://www.google.com/"};
+        new CliRunner().run(str);
+
     }
 }
