@@ -10,7 +10,7 @@ public class main
 		
 		sManager.addClass();
 		sManager.addClass();
-		sManager.printClassList();
+		sManager.addClass();
 
 		System.out.println("===================검색후===================");
 		// 검색조건이 2개이상 나올수 있어서 for으로 수행해야합니다.

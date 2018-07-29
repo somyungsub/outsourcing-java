@@ -36,7 +36,7 @@ public class SwingMenu {
         최초 프레임창 UI 설정
      */
     private void prepareGUI(){
-        mainFrame = new JFrame("기말시험 연습");
+        mainFrame = new JFrame("메모장 연습");
         mainFrame.setSize(400,400);
         mainFrame.setLayout(new BorderLayout());
 
