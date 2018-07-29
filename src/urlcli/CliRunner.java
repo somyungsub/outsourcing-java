@@ -38,16 +38,17 @@ public class CliRunner {
 
     private boolean parseOptions(Options options, String[] args) {
         CommandLineParser parser = new DefaultParser();
-
+        CommandLine cmdLine = null;
         try {
 
-            CommandLine cmd = parser.parse(options, args);
+            cmdLine = parser.parse(options, args, true);
 
-            addressOfPage = cmd.getOptionValue("u");
-            outputPath = cmd.getOptionValue("d");
-            help = cmd.hasOption("h");
+            addressOfPage = cmdLine.getOptionValue("u");
+            outputPath = cmdLine.getOptionValue("d");
+            help = cmdLine.hasOption("h");
 
         } catch (Exception e) {
+            e.printStackTrace();
             printHelp(options);
             return false;
         }
@@ -81,8 +82,8 @@ public class CliRunner {
 
     private void printHelp(Options options) {
         HelpFormatter formatter = new HelpFormatter();
-        String header = "CLI program";
+        String header = "CliRunnerTest program";
         String footer ="\nThis program make html file";
-        formatter.printHelp("CLIExample", header, options, footer, true);
+        formatter.printHelp("CliRunnerTest", header, options, footer, true);
     }
 }
