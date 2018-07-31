@@ -34,6 +34,7 @@ public class JListTest {
 
         JLabel label2 = new JLabel(new ImageIcon("src/swingjlist/1번벽지.jpg"));
         JLabel label3 = new JLabel(new ImageIcon("src/swingjlist/1번문.jpg"));
+        label3.setAlignmentY(-0.1f);
         panel2.add(label3);
         panel2.add(label2);
 
@@ -77,7 +78,7 @@ public class JListTest {
         };
         jlist.addListSelectionListener(listSelectionListener);
 
-        frame.setSize(800, 450);
+        frame.setSize(1000, 650);
         frame.setVisible(true);
     }
 }
