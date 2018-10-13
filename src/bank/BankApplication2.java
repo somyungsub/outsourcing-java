@@ -118,7 +118,7 @@ public class BankApplication2 {
         for (Account account : accountList) {
 
             // acoountList에 저장된 Account 객체 중에서 입력된 계좌번호와 동일한 객체가 있는지 판단하여 반환합니다.
-            if (account.getAno().equals(ano)) {
+            if (account!=null && account.getAno().equals(ano)) {
                 return account;
             }
         }
