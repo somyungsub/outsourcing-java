@@ -1,9 +1,9 @@
 package bank;
 
 public class Account {
-    private String ano;
-    private String owner;
-    private int balance;
+    private String ano;		// 계좌번호
+    private String owner;	// 예금		
+    private int balance;	// 잔액
 
     public Account(String ano, String owner, int balance) {
         this.ano = ano;
@@ -11,6 +11,8 @@ public class Account {
         this.balance = balance;
     }
 
+    
+    // getter, setter
     public String getAno() {
         return ano;
     }
